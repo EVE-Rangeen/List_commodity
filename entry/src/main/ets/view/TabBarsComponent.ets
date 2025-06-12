@@ -120,25 +120,89 @@ export default struct TabBar {
 
       // 手机
       TabContent() {
-        GoodsList({ dataSource: goodsInitialListMobile })
+        Scroll() {
+          Column() {
+            if (this.refreshStatus) {
+              PutDownRefresh({ refreshText: $refreshText })
+            }
+            GoodsList({ dataSource: goodsInitialListMobile })
+            Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
+          }
+          .width(LAYOUT_WIDTH_OR_HEIGHT)
+        }
+        .scrollBar(BarState.Off)
+        .edgeEffect(EdgeEffect.Spring)
+        .width(LAYOUT_WIDTH_OR_HEIGHT)
+        .height(LAYOUT_WIDTH_OR_HEIGHT)
+        .onTouch((event?: TouchEvent) => {
+          this.putDownRefresh(event);
+        })
       }
       .tabBar(this.otherTabBar($r('app.string.tab_mobile'), 0))
 
       // 服饰
       TabContent() {
-        GoodsList({ dataSource: goodsInitialListClothing })
+        Scroll() {
+          Column() {
+            if (this.refreshStatus) {
+              PutDownRefresh({ refreshText: $refreshText })
+            }
+            GoodsList({ dataSource: goodsInitialListClothing })
+            Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
+          }
+          .width(LAYOUT_WIDTH_OR_HEIGHT)
+        }
+        .scrollBar(BarState.Off)
+        .edgeEffect(EdgeEffect.Spring)
+        .width(LAYOUT_WIDTH_OR_HEIGHT)
+        .height(LAYOUT_WIDTH_OR_HEIGHT)
+        .onTouch((event?: TouchEvent) => {
+          this.putDownRefresh(event);
+        })
       }
       .tabBar(this.otherTabBar($r('app.string.tab_clothing'), 1))
 
       // 穿搭
       TabContent() {
-        GoodsList({ dataSource: goodsInitialListClothing2 })
+        Scroll() {
+          Column() {
+            if (this.refreshStatus) {
+              PutDownRefresh({ refreshText: $refreshText })
+            }
+            GoodsList({ dataSource: goodsInitialListClothing2 })
+            Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
+          }
+          .width(LAYOUT_WIDTH_OR_HEIGHT)
+        }
+        .scrollBar(BarState.Off)
+        .edgeEffect(EdgeEffect.Spring)
+        .width(LAYOUT_WIDTH_OR_HEIGHT)
+        .height(LAYOUT_WIDTH_OR_HEIGHT)
+        .onTouch((event?: TouchEvent) => {
+          this.putDownRefresh(event);
+        })
       }
       .tabBar(this.otherTabBar($r('app.string.tab_clothing2'), 2))
 
       // 家居
       TabContent() {
-        GoodsList({ dataSource: goodsInitialListHousehold })
+        Scroll() {
+          Column() {
+            if (this.refreshStatus) {
+              PutDownRefresh({ refreshText: $refreshText })
+            }
+            GoodsList({ dataSource: goodsInitialListHousehold })
+            Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
+          }
+          .width(LAYOUT_WIDTH_OR_HEIGHT)
+        }
+        .scrollBar(BarState.Off)
+        .edgeEffect(EdgeEffect.Spring)
+        .width(LAYOUT_WIDTH_OR_HEIGHT)
+        .height(LAYOUT_WIDTH_OR_HEIGHT)
+        .onTouch((event?: TouchEvent) => {
+          this.putDownRefresh(event);
+        })
       }
       .tabBar(this.otherTabBar($r('app.string.tab_household'), 3))
     }
