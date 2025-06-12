@@ -40,4 +40,4 @@ export const MAX_OFFSET_Y: number = 100;
 export const REFRESH_TIME: number = 1500;
 // Magnification
 export const MAGNIFICATION: number = 2;
-export const MAX_DATA_LENGTH: number = 12;
+export const MAX_DATA_LENGTH: number = 8;

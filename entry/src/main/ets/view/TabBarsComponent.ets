@@ -31,6 +31,13 @@ import {
   goodsInitialListClothing2,
   goodsInitialListHousehold
 } from '../viewmodel/InitialData';
+import {
+  createListRange,
+  createListRangeMobile,
+  createListRangeClothing,
+  createListRangeClothing2,
+  createListRangeHousehold
+} from '../viewmodel/ListDataSource';
 
 @Component
 export default struct TabBar {
@@ -103,7 +110,7 @@ export default struct TabBar {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList({ dataSource: goodsInitialList }) // 精选
+            GoodsList({ dataSource: createListRange() }) // 修改为循环拼接后的数据
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)
@@ -125,7 +132,7 @@ export default struct TabBar {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList({ dataSource: goodsInitialListMobile })
+            GoodsList({ dataSource: createListRangeMobile() }) // 修改为循环拼接后的数据
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)
@@ -147,7 +154,7 @@ export default struct TabBar {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList({ dataSource: goodsInitialListClothing })
+            GoodsList({ dataSource: createListRangeClothing() }) // 修改为循环拼接后的数据
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)
@@ -169,7 +176,7 @@ export default struct TabBar {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList({ dataSource: goodsInitialListClothing2 })
+            GoodsList({ dataSource: createListRangeClothing2() }) // 修改为循环拼接后的数据
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)
@@ -191,7 +198,7 @@ export default struct TabBar {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList({ dataSource: goodsInitialListHousehold })
+            GoodsList({ dataSource: createListRangeHousehold() }) // 修改为循环拼接后的数据
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)

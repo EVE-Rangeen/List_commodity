@@ -19,8 +19,41 @@ import { MAGNIFICATION, MAX_DATA_LENGTH } from '../common/CommonConstants';
 /**
  * create a List range
  */
-const createListRange = (): GoodsListItemType[] => {
-  let result = new Array<GoodsListItemType>();
+export const createListRangeMobile = (): GoodsListItemType[] => {
+  let result: GoodsListItemType[] = [];
+  for (let i = 0; i < MAGNIFICATION; i++) {
+    result = result.concat(goodsInitialListMobile);
+  }
+  return result;
+}
+
+export const createListRangeClothing = (): GoodsListItemType[] => {
+  let result: GoodsListItemType[] = [];
+  for (let i = 0; i < MAGNIFICATION; i++) {
+    result = result.concat(goodsInitialListClothing);
+  }
+  return result;
+}
+
+export const createListRangeClothing2 = (): GoodsListItemType[] => {
+  let result: GoodsListItemType[] = [];
+  for (let i = 0; i < MAGNIFICATION; i++) {
+    result = result.concat(goodsInitialListClothing2);
+  }
+  return result;
+}
+
+export const createListRangeHousehold = (): GoodsListItemType[] => {
+  let result: GoodsListItemType[] = [];
+  for (let i = 0; i < MAGNIFICATION; i++) {
+    result = result.concat(goodsInitialListHousehold);
+  }
+  return result;
+}
+
+// 原有的 createListRange 作为默认
+export const createListRange = (): GoodsListItemType[] => {
+  let result: GoodsListItemType[] = [];
   for (let i = 0; i < MAGNIFICATION; i++) {
     result = result.concat(goodsInitialList);
   }
@@ -86,7 +119,9 @@ class BasicDataSource implements IDataSource {
 }
 
 export class ListDataSource extends BasicDataSource {
-  private listData = createListRange();
+  private listData: GoodsListItemType[] = createListRange();
+  private currentType: string = 'default';
+  private loadCount: number = 1; // 新增，记录已经加载了几组
 
   public totalCount(): number {
     return this.listData.length;
@@ -97,15 +132,63 @@ export class ListDataSource extends BasicDataSource {
   }
 
   public pushData(): void {
-    if (this.listData.length < MAX_DATA_LENGTH) {
-      this.listData = this.listData.concat(goodsInitialList);
+    // 每次追加一组完整的 createListRangeXxx() 数据
+    let appendList: GoodsListItemType[] = [];
+    switch (this.currentType) {
+      case 'mobile':
+        appendList = createListRangeMobile();
+        break;
+      case 'clothing':
+        appendList = createListRangeClothing();
+        break;
+      case 'clothing2':
+        appendList = createListRangeClothing2();
+        break;
+      case 'household':
+        appendList = createListRangeHousehold();
+        break;
+      default:
+        appendList = createListRange();
+    }
+    // 只要没超过最大长度就追加
+    if (this.listData.length + appendList.length <= MAX_DATA_LENGTH) {
+      this.listData = this.listData.concat(appendList);
+      this.loadCount++;
+      this.notifyDataAdd(this.listData.length - 1);
+    } else if (this.listData.length < MAX_DATA_LENGTH) {
+      // 只追加剩余需要的数量
+      const remain = MAX_DATA_LENGTH - this.listData.length;
+      this.listData = this.listData.concat(appendList.slice(0, remain));
+      this.loadCount++;
       this.notifyDataAdd(this.listData.length - 1);
     }
   }
 
-  // 新增：切换数据源
   public setDataSource(list: GoodsListItemType[]): void {
     this.listData = list;
+    this.loadCount = 1; // 重置
+    this.notifyDataReload();
+  }
+
+  public setDataSourceByType(type: string): void {
+    this.currentType = type;
+    switch (type) {
+      case 'mobile':
+        this.listData = createListRangeMobile();
+        break;
+      case 'clothing':
+        this.listData = createListRangeClothing();
+        break;
+      case 'clothing2':
+        this.listData = createListRangeClothing2();
+        break;
+      case 'household':
+        this.listData = createListRangeHousehold();
+        break;
+      default:
+        this.listData = createListRange();
+    }
+    this.loadCount = 1; // 重置
     this.notifyDataReload();
   }
 }
