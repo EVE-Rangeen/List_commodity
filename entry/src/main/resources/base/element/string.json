@@ -41,12 +41,84 @@
       "value": "【新品上市】奶茶自然清新亲近自然"
     },
     {
+      "name": "PhoneName1",
+      "value": "【新品上市】华为手机三年质保"
+    },
+    {
+      "name": "PhoneName2",
+      "value": "【正品发票】苹果手机非新赔三"
+    },
+    {
+      "name": "ClothName1",
+      "value": "【全新上市】纯棉T恤"
+    },
+    {
+      "name": "ClothName2",
+      "value": "【全新上市】童装T恤"
+    },
+    {
+      "name": "ClothName3",
+      "value": "【全新上市】纯棉帽衫"
+    },
+    {
+      "name": "ClothName4",
+      "value": "【全新上市】纯棉帽衫 颜色可选"
+    },
+    {
+      "name": "DressingName1",
+      "value": "【潮牌】日系女装"
+    },
+    {
+      "name": "DressingName2",
+      "value": "【潮牌】清新男装"
+    },
+    {
+      "name": "DressingName3",
+      "value": "【潮牌】夏季穿搭"
+    },
+    {
+      "name": "DressingName4",
+      "value": "【潮牌】日系穿搭"
+    },
+    {
+      "name": "HouseholdName1",
+      "value": "【百亿补贴】厨房分类筐"
+    },
+    {
+      "name": "HouseholdName2",
+      "value": "【百亿补贴】桌角书架"
+    },
+    {
+      "name": "HouseholdName3",
+      "value": "【百亿补贴】长方形杂物筐"
+    },
+    {
+      "name": "HouseholdName4",
+      "value": "【百亿补贴】洗漱收纳盒"
+    },
+    {
       "name": "advertising_language",
-      "value": "重磅推荐，MD新品试用中！"
+      "value": "重磅推荐，限时抢购！"
     },
     {
       "name": "evaluate",
       "value": "6662人评价 95%好评"
+    },
+    {
+      "name": "price_19",
+      "value": "¥19"
+    },
+    {
+      "name": "price_29",
+      "value": "¥29"
+    },
+    {
+      "name": "price_89",
+      "value": "¥89"
+    },
+    {
+      "name": "price_99",
+      "value": "¥99"
     },
     {
       "name": "price_199",
@@ -57,12 +129,24 @@
       "value": "¥265"
     },
     {
+      "name": "price_365",
+      "value": "¥365"
+    },
+    {
       "name": "price_810",
       "value": "¥810"
     },
     {
       "name": "price_999",
       "value": "¥999"
+    },
+    {
+      "name": "price_1999",
+      "value": "¥1999"
+    },
+    {
+      "name": "price_2999",
+      "value": "¥2999"
     },
     {
       "name": "to_bottom",

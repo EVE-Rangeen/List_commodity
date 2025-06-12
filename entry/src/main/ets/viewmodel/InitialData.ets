@@ -44,33 +44,33 @@ export const goodsInitialList: GoodsListItemType[] = [
 ]
 
 export const goodsInitialListMobile: GoodsListItemType[] = [
-  new GoodsListItemType($r('app.media.goodsImg'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg'), $r('app.string.another_goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg'), $r('app.string.another_goodsName'), $r('app.string.price_199'))
+  new GoodsListItemType($r('app.media.PhoneImg_1'), $r('app.string.PhoneName1'), $r('app.string.price_1999')),
+  new GoodsListItemType($r('app.media.PhoneImg_2'), $r('app.string.PhoneName1'), $r('app.string.price_1999')),
+  new GoodsListItemType($r('app.media.PhoneImg_3'), $r('app.string.PhoneName2'), $r('app.string.price_2999')),
+  new GoodsListItemType($r('app.media.PhoneImg_4'), $r('app.string.PhoneName2'), $r('app.string.price_2999'))
 
 ]
 
 export const goodsInitialListClothing: GoodsListItemType[] = [
-  new GoodsListItemType($r('app.media.goodsImg_2'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_2'), $r('app.string.another_goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_2'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_2'), $r('app.string.another_goodsName'), $r('app.string.price_199'))
+  new GoodsListItemType($r('app.media.clothImg_1'), $r('app.string.ClothName1'), $r('app.string.price_99')),
+  new GoodsListItemType($r('app.media.clothImg_2'), $r('app.string.ClothName2'), $r('app.string.price_89')),
+  new GoodsListItemType($r('app.media.clothImg_3'), $r('app.string.ClothName3'), $r('app.string.price_99')),
+  new GoodsListItemType($r('app.media.clothImg_4'), $r('app.string.ClothName4'), $r('app.string.price_89'))
 
 ]
 
 export const goodsInitialListClothing2: GoodsListItemType[] = [
-  new GoodsListItemType($r('app.media.goodsImg_3'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_3'), $r('app.string.another_goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_3'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_3'), $r('app.string.another_goodsName'), $r('app.string.price_199'))
+  new GoodsListItemType($r('app.media.dressingImg_1'), $r('app.string.DressingName1'), $r('app.string.price_365')),
+  new GoodsListItemType($r('app.media.dressingImg_2'), $r('app.string.DressingName2'), $r('app.string.price_265')),
+  new GoodsListItemType($r('app.media.dressingImg_3'), $r('app.string.DressingName3'), $r('app.string.price_365')),
+  new GoodsListItemType($r('app.media.dressingImg_4'), $r('app.string.DressingName4'), $r('app.string.price_265'))
 
 ]
 
 export const goodsInitialListHousehold: GoodsListItemType[] = [
-  new GoodsListItemType($r('app.media.goodsImg_4'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_4'), $r('app.string.another_goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_4'), $r('app.string.goodsName'), $r('app.string.price_199')),
-  new GoodsListItemType($r('app.media.goodsImg_4'), $r('app.string.another_goodsName'), $r('app.string.price_199'))
+  new GoodsListItemType($r('app.media.householdImg_1'), $r('app.string.HouseholdName1'), $r('app.string.price_19')),
+  new GoodsListItemType($r('app.media.householdImg_2'), $r('app.string.HouseholdName2'), $r('app.string.price_29')),
+  new GoodsListItemType($r('app.media.householdImg_3'), $r('app.string.HouseholdName3'), $r('app.string.price_19')),
+  new GoodsListItemType($r('app.media.householdImg_4'), $r('app.string.HouseholdName4'), $r('app.string.price_29'))
 
 ]
