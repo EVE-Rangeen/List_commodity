@@ -1,0 +1,22 @@
+{
+  "modulePathMap": {
+    "entry": "E:\\ArkTsProject\\List_commodity\\entry"
+  },
+  "compileMode": "esmodule",
+  "projectRootPath": "E:\\ArkTsProject\\List_commodity",
+  "nodeModulesPath": "E:\\ArkTsProject\\List_commodity\\entry\\.preview\\default\\intermediates\\loader_out\\default\\node_modules",
+  "byteCodeHarInfo": {},
+  "declarationEntry": [],
+  "moduleName": "entry",
+  "hspNameOhmMap": {},
+  "harNameOhmMap": {},
+  "packageManagerType": "ohpm",
+  "compileEntry": [],
+  "otherCompileFiles": [],
+  "dynamicImportLibInfo": {},
+  "routerMap": [],
+  "hspResourcesMap": {},
+  "anBuildOutPut": "E:\\ArkTsProject\\List_commodity\\entry\\.preview\\default\\intermediates\\loader_out\\default\\an\\arm64-v8a",
+  "anBuildMode": "type",
+  "buildConfigPath": ".preview\\config\\buildConfig.json"
+}
