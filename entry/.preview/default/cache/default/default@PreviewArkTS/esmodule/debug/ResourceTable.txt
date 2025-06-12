@@ -16,6 +16,10 @@ string price_810 0x0100000f
 string price_999 0x01000010
 string refresh_text 0x01000011
 string selected 0x01000012
+string tab_clothing 0x01000021
+string tab_clothing2 0x01000022
+string tab_household 0x01000023
+string tab_mobile 0x01000024
 string to_bottom 0x01000013
 string wear 0x01000014
 color deepGray 0x01000017

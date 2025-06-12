@@ -19,9 +19,16 @@ import { ListDataSource } from '../viewmodel/ListDataSource';
 
 @Component
 export default struct GoodsList {
+  @Prop dataSource: GoodsListItemType[]; // 新增，接收数据源
   @Provide goodsListData: ListDataSource = new ListDataSource();
   private startTouchOffsetY: number = 0;
   private endTouchOffsetY: number = 0;
+//
+  aboutToAppear() {
+    // 每次出现时设置数据源
+    this.goodsListData.setDataSource(this.dataSource);
+  }
+//
 
   build() {
     Row() {

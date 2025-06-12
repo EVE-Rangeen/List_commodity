@@ -24,6 +24,13 @@ import {
 } from '../common/CommonConstants';
 import GoodsList from './GoodsListComponent';
 import PutDownRefresh from './PutDownRefreshLayout';
+import {
+  goodsInitialList,
+  goodsInitialListMobile,
+  goodsInitialListClothing,
+  goodsInitialListClothing2,
+  goodsInitialListHousehold
+} from '../viewmodel/InitialData';
 
 @Component
 export default struct TabBar {
@@ -89,13 +96,14 @@ export default struct TabBar {
 
   build() {
     Tabs() {
+      // 精选
       TabContent() {
         Scroll() {
           Column() {
             if (this.refreshStatus) {
               PutDownRefresh({ refreshText: $refreshText })
             }
-            GoodsList()
+            GoodsList({ dataSource: goodsInitialList }) // 精选
             Text($r('app.string.to_bottom')).fontSize(NORMAL_FONT_SIZE).fontColor($r('app.color.gray'))
           }
           .width(LAYOUT_WIDTH_OR_HEIGHT)
@@ -110,17 +118,29 @@ export default struct TabBar {
       }
       .tabBar(this.firstTabBar)
 
-      ForEach(initTabBarData, (item: Resource, index?: number) => {
-        TabContent() {
-          Column() {
-            Text(item).fontSize(MAX_FONT_SIZE)
-          }
-          .justifyContent(FlexAlign.Center)
-          .width(LAYOUT_WIDTH_OR_HEIGHT)
-          .height(LAYOUT_WIDTH_OR_HEIGHT)
-        }
-        .tabBar(this.otherTabBar(item, index !== undefined ? index : 0))
-      })
+      // 手机
+      TabContent() {
+        GoodsList({ dataSource: goodsInitialListMobile })
+      }
+      .tabBar(this.otherTabBar($r('app.string.tab_mobile'), 0))
+
+      // 服饰
+      TabContent() {
+        GoodsList({ dataSource: goodsInitialListClothing })
+      }
+      .tabBar(this.otherTabBar($r('app.string.tab_clothing'), 1))
+
+      // 穿搭
+      TabContent() {
+        GoodsList({ dataSource: goodsInitialListClothing2 })
+      }
+      .tabBar(this.otherTabBar($r('app.string.tab_clothing2'), 2))
+
+      // 家居
+      TabContent() {
+        GoodsList({ dataSource: goodsInitialListHousehold })
+      }
+      .tabBar(this.otherTabBar($r('app.string.tab_household'), 3))
     }
     .onChange((index: number) => {
       this.tabsIndex = index;

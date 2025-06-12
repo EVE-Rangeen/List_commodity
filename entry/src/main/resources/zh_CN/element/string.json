@@ -11,6 +11,34 @@
     {
       "name": "EntryAbility_label",
       "value": "List组件"
+    },
+    {
+      "name": "tab_mobile",
+      "value": "手机"
+    },
+    {
+      "name": "tab_clothing",
+      "value": "服饰"
+    },
+    {
+      "name": "tab_clothing2",
+      "value": "穿搭"
+    },
+    {
+      "name": "tab_household",
+      "value": "家居"
+    },
+    {
+      "name": "refresh_text",
+      "value": "下拉刷新"
+    },
+    {
+      "name": "selected",
+      "value": "精选"
+    },
+    {
+      "name": "to_bottom",
+      "value": "已经到底啦"
     }
   ]
 }

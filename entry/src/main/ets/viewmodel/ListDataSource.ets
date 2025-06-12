@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { goodsInitialList, GoodsListItemType } from './InitialData';
+import { goodsInitialList,goodsInitialListMobile,goodsInitialListClothing,goodsInitialListClothing2,goodsInitialListHousehold, GoodsListItemType } from './InitialData';
 import { MAGNIFICATION, MAX_DATA_LENGTH } from '../common/CommonConstants';
 
 /**
@@ -101,5 +101,11 @@ export class ListDataSource extends BasicDataSource {
       this.listData = this.listData.concat(goodsInitialList);
       this.notifyDataAdd(this.listData.length - 1);
     }
+  }
+
+  // 新增：切换数据源
+  public setDataSource(list: GoodsListItemType[]): void {
+    this.listData = list;
+    this.notifyDataReload();
   }
 }

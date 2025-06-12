@@ -73,4 +73,9 @@ export class ListDataSource extends BasicDataSource {
             this.notifyDataAdd(this.listData.length - 1);
         }
     }
+    // 新增：切换数据源
+    public setDataSource(list: GoodsListItemType[]): void {
+        this.listData = list;
+        this.notifyDataReload();
+    }
 }

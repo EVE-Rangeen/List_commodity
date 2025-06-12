@@ -8,10 +8,10 @@ interface TabBar_Params {
     refreshStatus?: boolean;
     refreshText?: Resource;
 }
-import { initTabBarData } from "@bundle:com.example.list_harmony/entry/ets/viewmodel/InitialData";
-import { LAYOUT_WIDTH_OR_HEIGHT, NORMAL_FONT_SIZE, BIGGER_FONT_SIZE, MAX_FONT_SIZE, MAX_OFFSET_Y, REFRESH_TIME } from "@bundle:com.example.list_harmony/entry/ets/common/CommonConstants";
+import { LAYOUT_WIDTH_OR_HEIGHT, NORMAL_FONT_SIZE, BIGGER_FONT_SIZE, MAX_OFFSET_Y, REFRESH_TIME } from "@bundle:com.example.list_harmony/entry/ets/common/CommonConstants";
 import GoodsList from "@bundle:com.example.list_harmony/entry/ets/view/GoodsListComponent";
 import PutDownRefresh from "@bundle:com.example.list_harmony/entry/ets/view/PutDownRefreshLayout";
+import { goodsInitialList, goodsInitialListMobile, goodsInitialListClothing, goodsInitialListClothing2, goodsInitialListHousehold } from "@bundle:com.example.list_harmony/entry/ets/viewmodel/InitialData";
 export default class TabBar extends ViewPU {
     constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
         super(parent, __localStorage, elmtId, extraInfo);
@@ -83,14 +83,14 @@ export default class TabBar extends ViewPU {
     firstTabBar(parent = null) {
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Column.create();
-            Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(38:5)", "entry");
+            Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(45:5)", "entry");
             Column.width(LAYOUT_WIDTH_OR_HEIGHT);
             Column.height(LAYOUT_WIDTH_OR_HEIGHT);
             Column.justifyContent(FlexAlign.Center);
         }, Column);
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Text.create({ "id": 16777234, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" });
-            Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(39:7)", "entry");
+            Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(46:7)", "entry");
             Text.fontSize(this.tabsIndex === 0 ? BIGGER_FONT_SIZE : NORMAL_FONT_SIZE);
             Text.fontColor(this.tabsIndex === 0 ? Color.Black : { "id": 16777241, "type": 10001, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" });
         }, Text);
@@ -100,14 +100,14 @@ export default class TabBar extends ViewPU {
     otherTabBar(content: Resource, index: number, parent = null) {
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Column.create();
-            Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(50:5)", "entry");
+            Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(57:5)", "entry");
             Column.width(LAYOUT_WIDTH_OR_HEIGHT);
             Column.height(LAYOUT_WIDTH_OR_HEIGHT);
             Column.justifyContent(FlexAlign.Center);
         }, Column);
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Text.create(content);
-            Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(51:7)", "entry");
+            Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(58:7)", "entry");
             Text.fontSize(this.tabsIndex === index + 1 ? BIGGER_FONT_SIZE : NORMAL_FONT_SIZE);
             Text.fontColor(this.tabsIndex === index + 1 ? Color.Black : { "id": 16777241, "type": 10001, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" });
         }, Text);
@@ -145,7 +145,7 @@ export default class TabBar extends ViewPU {
     initialRender() {
         this.observeComponentCreation2((elmtId, isInitialRender) => {
             Tabs.create();
-            Tabs.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(91:5)", "entry");
+            Tabs.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(98:5)", "entry");
             Tabs.onChange((index: number) => {
                 this.tabsIndex = index;
             });
@@ -155,7 +155,7 @@ export default class TabBar extends ViewPU {
             TabContent.create(() => {
                 this.observeComponentCreation2((elmtId, isInitialRender) => {
                     Scroll.create();
-                    Scroll.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(93:9)", "entry");
+                    Scroll.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(101:9)", "entry");
                     Scroll.scrollBar(BarState.Off);
                     Scroll.edgeEffect(EdgeEffect.Spring);
                     Scroll.width(LAYOUT_WIDTH_OR_HEIGHT);
@@ -166,7 +166,7 @@ export default class TabBar extends ViewPU {
                 }, Scroll);
                 this.observeComponentCreation2((elmtId, isInitialRender) => {
                     Column.create();
-                    Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(94:11)", "entry");
+                    Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(102:11)", "entry");
                     Column.width(LAYOUT_WIDTH_OR_HEIGHT);
                 }, Column);
                 this.observeComponentCreation2((elmtId, isInitialRender) => {
@@ -176,7 +176,7 @@ export default class TabBar extends ViewPU {
                             {
                                 this.observeComponentCreation2((elmtId, isInitialRender) => {
                                     if (isInitialRender) {
-                                        let componentCall = new PutDownRefresh(this, { refreshText: this.__refreshText }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 96, col: 15 });
+                                        let componentCall = new PutDownRefresh(this, { refreshText: this.__refreshText }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 104, col: 15 });
                                         ViewPU.create(componentCall);
                                         let paramsLambda = () => {
                                             return {
@@ -201,21 +201,25 @@ export default class TabBar extends ViewPU {
                 {
                     this.observeComponentCreation2((elmtId, isInitialRender) => {
                         if (isInitialRender) {
-                            let componentCall = new GoodsList(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 98, col: 13 });
+                            let componentCall = new GoodsList(this, { dataSource: goodsInitialList }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 106, col: 13 });
                             ViewPU.create(componentCall);
                             let paramsLambda = () => {
-                                return {};
+                                return {
+                                    dataSource: goodsInitialList
+                                };
                             };
                             componentCall.paramsGenerator_ = paramsLambda;
                         }
                         else {
-                            this.updateStateVarsOfChildByElmtId(elmtId, {});
+                            this.updateStateVarsOfChildByElmtId(elmtId, {
+                                dataSource: goodsInitialList
+                            });
                         }
                     }, { name: "GoodsList" });
                 }
                 this.observeComponentCreation2((elmtId, isInitialRender) => {
                     Text.create({ "id": 16777235, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" });
-                    Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(99:13)", "entry");
+                    Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(107:13)", "entry");
                     Text.fontSize(NORMAL_FONT_SIZE);
                     Text.fontColor({ "id": 16777241, "type": 10001, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" });
                 }, Text);
@@ -224,40 +228,121 @@ export default class TabBar extends ViewPU {
                 Scroll.pop();
             });
             TabContent.tabBar({ builder: this.firstTabBar.bind(this) });
-            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(92:7)", "entry");
+            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(100:7)", "entry");
         }, TabContent);
         TabContent.pop();
         this.observeComponentCreation2((elmtId, isInitialRender) => {
-            ForEach.create();
-            const forEachItemGenFunction = (_item, index?: number) => {
-                const item = _item;
-                this.observeComponentCreation2((elmtId, isInitialRender) => {
-                    TabContent.create(() => {
-                        this.observeComponentCreation2((elmtId, isInitialRender) => {
-                            Column.create();
-                            Column.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(115:11)", "entry");
-                            Column.justifyContent(FlexAlign.Center);
-                            Column.width(LAYOUT_WIDTH_OR_HEIGHT);
-                            Column.height(LAYOUT_WIDTH_OR_HEIGHT);
-                        }, Column);
-                        this.observeComponentCreation2((elmtId, isInitialRender) => {
-                            Text.create(item);
-                            Text.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(116:13)", "entry");
-                            Text.fontSize(MAX_FONT_SIZE);
-                        }, Text);
-                        Text.pop();
-                        Column.pop();
-                    });
-                    TabContent.tabBar({ builder: () => {
-                            this.otherTabBar.call(this, item, index !== undefined ? index : 0);
-                        } });
-                    TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(114:9)", "entry");
-                }, TabContent);
-                TabContent.pop();
-            };
-            this.forEachUpdateFunction(elmtId, initTabBarData, forEachItemGenFunction, undefined, true, false);
-        }, ForEach);
-        ForEach.pop();
+            TabContent.create(() => {
+                {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        if (isInitialRender) {
+                            let componentCall = new GoodsList(this, { dataSource: goodsInitialListMobile }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 123, col: 9 });
+                            ViewPU.create(componentCall);
+                            let paramsLambda = () => {
+                                return {
+                                    dataSource: goodsInitialListMobile
+                                };
+                            };
+                            componentCall.paramsGenerator_ = paramsLambda;
+                        }
+                        else {
+                            this.updateStateVarsOfChildByElmtId(elmtId, {
+                                dataSource: goodsInitialListMobile
+                            });
+                        }
+                    }, { name: "GoodsList" });
+                }
+            });
+            TabContent.tabBar({ builder: () => {
+                    this.otherTabBar.call(this, { "id": 16777252, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" }, 0);
+                } });
+            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(122:7)", "entry");
+        }, TabContent);
+        TabContent.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TabContent.create(() => {
+                {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        if (isInitialRender) {
+                            let componentCall = new GoodsList(this, { dataSource: goodsInitialListClothing }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 129, col: 9 });
+                            ViewPU.create(componentCall);
+                            let paramsLambda = () => {
+                                return {
+                                    dataSource: goodsInitialListClothing
+                                };
+                            };
+                            componentCall.paramsGenerator_ = paramsLambda;
+                        }
+                        else {
+                            this.updateStateVarsOfChildByElmtId(elmtId, {
+                                dataSource: goodsInitialListClothing
+                            });
+                        }
+                    }, { name: "GoodsList" });
+                }
+            });
+            TabContent.tabBar({ builder: () => {
+                    this.otherTabBar.call(this, { "id": 16777249, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" }, 1);
+                } });
+            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(128:7)", "entry");
+        }, TabContent);
+        TabContent.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TabContent.create(() => {
+                {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        if (isInitialRender) {
+                            let componentCall = new GoodsList(this, { dataSource: goodsInitialListClothing2 }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 135, col: 9 });
+                            ViewPU.create(componentCall);
+                            let paramsLambda = () => {
+                                return {
+                                    dataSource: goodsInitialListClothing2
+                                };
+                            };
+                            componentCall.paramsGenerator_ = paramsLambda;
+                        }
+                        else {
+                            this.updateStateVarsOfChildByElmtId(elmtId, {
+                                dataSource: goodsInitialListClothing2
+                            });
+                        }
+                    }, { name: "GoodsList" });
+                }
+            });
+            TabContent.tabBar({ builder: () => {
+                    this.otherTabBar.call(this, { "id": 16777250, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" }, 2);
+                } });
+            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(134:7)", "entry");
+        }, TabContent);
+        TabContent.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TabContent.create(() => {
+                {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        if (isInitialRender) {
+                            let componentCall = new GoodsList(this, { dataSource: goodsInitialListHousehold }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/view/TabBarsComponent.ets", line: 141, col: 9 });
+                            ViewPU.create(componentCall);
+                            let paramsLambda = () => {
+                                return {
+                                    dataSource: goodsInitialListHousehold
+                                };
+                            };
+                            componentCall.paramsGenerator_ = paramsLambda;
+                        }
+                        else {
+                            this.updateStateVarsOfChildByElmtId(elmtId, {
+                                dataSource: goodsInitialListHousehold
+                            });
+                        }
+                    }, { name: "GoodsList" });
+                }
+            });
+            TabContent.tabBar({ builder: () => {
+                    this.otherTabBar.call(this, { "id": 16777251, "type": 10003, params: [], "bundleName": "com.example.list_harmony", "moduleName": "entry" }, 3);
+                } });
+            TabContent.debugLine("entry/src/main/ets/view/TabBarsComponent.ets(140:7)", "entry");
+        }, TabContent);
+        TabContent.pop();
         Tabs.pop();
     }
     rerender() {
